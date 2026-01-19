@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Argus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <h1 class="header-title">Tasks</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" aria-label="Sync tasks">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" aria-label="Complete all">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search task">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h2 class="section-title">Your tasks</h2>
+                    <p class="section-subtitle">Wed, Jan 7 – Fri, Jan 9</p>
+                </div>
+                <button class="icon-btn icon-btn-dark" aria-label="Filter options">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6"/>
+                        <line x1="4" y1="12" x2="20" y2="12"/>
+                        <line x1="4" y1="18" x2="20" y2="18"/>
+                        <circle cx="8" cy="6" r="2" fill="currentColor"/>
+                        <circle cx="16" cy="12" r="2" fill="currentColor"/>
+                        <circle cx="10" cy="18" r="2" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="new">
+                    New
+                    <span class="badge">3</span>
+                </button>
+                <button class="filter-tab" data-filter="in-progress">In progress</button>
+                <button class="filter-tab" data-filter="complete">Complete</button>
+            </div>
+
+            <!-- Tasks List -->
+            <div class="tasks-list">
+                <!-- Task Card -->
+                <div class="task-card" data-status="new">
+                    <div class="task-side">
+                        <div class="task-side-group">
+                            <span class="task-side-old">1240hrs</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">1240hrs</span>
+                        </div>
+                        <div class="task-side-group">
+                            <span class="task-side-old">A12</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">A12</span>
+                        </div>
+                    </div>
+                    <div class="task-main">
+                        <div class="task-top">
+                            <div class="task-header">
+                                <div class="task-flight">
+                                    <span class="task-flight-code">KB541</span>
+                                    <span class="task-flight-dest">ICN</span>
+                                </div>
+                                <div class="task-date">Thu, Jan 8</div>
+                            </div>
+                            <div class="task-etd">
+                                <span class="task-etd-label">ETD -</span>
+                                <span class="task-etd-old">1355hrs</span>
+                                <span class="task-etd-arrow">&rarr;</span>
+                                <span class="task-etd-new">1355hrs</span>
+                            </div>
+                        </div>
+                        <div class="task-divider"></div>
+                        <div class="task-details">
+                            <h3 class="task-title">(PB OPS) Join Main Team</h3>
+                            <p class="task-subtitle">To complete all sub-task</p>
+                        </div>
+                        <button class="accept-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Accept
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Task Card: ETD change impacts RT -->
+                <div class="task-card" data-status="new">
+                    <div class="task-side">
+                        <div class="task-side-group" data-rt-from-etd="true">
+                            <span class="task-side-old">1240hrs</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">1430hrs</span>
+                        </div>
+                        <div class="task-side-group">
+                            <span class="task-side-old">A01</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">A01</span>
+                        </div>
+                    </div>
+                    <div class="task-main">
+                        <div class="task-top">
+                            <div class="task-header">
+                                <div class="task-flight">
+                                    <span class="task-flight-code">KB762</span>
+                                    <span class="task-flight-dest">HND</span>
+                                </div>
+                                <div class="task-date">Thu, Jan 8</div>
+                            </div>
+                            <div class="task-etd" data-etd-old="1355" data-etd-new="1545">
+                                <span class="task-etd-label">ETD -</span>
+                                <span class="task-etd-old">1355hrs</span>
+                                <span class="task-etd-arrow">&rarr;</span>
+                                <span class="task-etd-new">1545hrs</span>
+                            </div>
+                        </div>
+                        <div class="task-divider"></div>
+                        <div class="task-details">
+                            <h3 class="task-title">(PB OPS) Join Main Team</h3>
+                            <p class="task-subtitle">To complete all sub-task</p>
+                        </div>
+                        <button class="accept-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Accept
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Task Card: Gate change -->
+                <div class="task-card" data-status="new">
+                    <div class="task-side">
+                        <div class="task-side-group">
+                            <span class="task-side-old">1455hrs</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">1455hrs</span>
+                        </div>
+                        <div class="task-side-group" data-old="A12" data-new="A09">
+                            <span class="task-side-old">A12</span>
+                            <span class="task-side-arrow">&darr;</span>
+                            <span class="task-side-new">A09</span>
+                        </div>
+                    </div>
+                    <div class="task-main">
+                        <div class="task-top">
+                            <div class="task-header">
+                                <div class="task-flight">
+                                    <span class="task-flight-code">KB215</span>
+                                    <span class="task-flight-dest">NRT</span>
+                                </div>
+                                <div class="task-date">Thu, Jan 8</div>
+                            </div>
+                            <div class="task-etd">
+                                <span class="task-etd-label">ETD -</span>
+                                <span class="task-etd-old">1610hrs</span>
+                                <span class="task-etd-arrow">&rarr;</span>
+                                <span class="task-etd-new">1610hrs</span>
+                            </div>
+                        </div>
+                        <div class="task-divider"></div>
+                        <div class="task-details">
+                            <h3 class="task-title">(PB OPS) Join Main Team</h3>
+                            <p class="task-subtitle">To complete all sub-task</p>
+                        </div>
+                        <button class="accept-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- SOS Button -->
+        <button class="sos-btn" aria-label="SOS Emergency">SOS</button>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-nav="home" aria-label="Home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </button>
+            <button class="nav-item active" data-nav="tasks" aria-label="Tasks">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+            </button>
+            <button class="nav-item nav-add" data-nav="add" aria-label="Add task">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+            </button>
+            <button class="nav-item has-notification" data-nav="messages" aria-label="Messages">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+                <span class="notification-dot"></span>
+            </button>
+            <button class="nav-item" data-nav="menu" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="5" cy="5" r="2"/>
+                    <circle cx="12" cy="5" r="2"/>
+                    <circle cx="19" cy="5" r="2"/>
+                    <circle cx="5" cy="12" r="2"/>
+                    <circle cx="12" cy="12" r="2"/>
+                    <circle cx="19" cy="12" r="2"/>
+                    <circle cx="5" cy="19" r="2"/>
+                    <circle cx="12" cy="19" r="2"/>
+                    <circle cx="19" cy="19" r="2"/>
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
